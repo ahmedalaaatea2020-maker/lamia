@@ -45,16 +45,6 @@ p.lead{color:var(--mute);margin:0 0 36px;max-width:34em}
 .letters button[aria-pressed="true"]{background:var(--lav);color:#12112b;transform:translateY(-8px) rotate(-3deg);border-color:transparent}
 #wish{min-height:5.5em;text-align:center;font-size:clamp(1.2rem,3.4vw,1.7rem);border-radius:24px;padding:22px;background:var(--bg2);border:1.5px dashed var(--line)}
 
-/* signs */
-.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.sign{background:var(--bg2);border:1.5px solid var(--line);border-radius:30px;padding:26px 22px;text-align:center}
-.sign .em{font-size:4.2rem;line-height:1.2;display:block;transition:transform .3s}
-.sign[aria-pressed="true"]{border-color:var(--mint)}
-.sign[aria-pressed="true"] .em{animation:wig .9s ease-in-out infinite}
-.sign b{display:block;font-size:1.25rem;margin-top:6px}
-.sign span.d{display:block;color:var(--mute);font-size:.95rem;min-height:3.4em}
-@keyframes wig{0%,100%{transform:rotate(-12deg) scale(1.1)}50%{transform:rotate(12deg) scale(1.2)}}
-
 /* cake */
 .cakebox{display:grid;place-items:center;gap:16px;text-align:center}
 .cakebox svg{width:min(380px,90%);height:auto;overflow:visible}
@@ -155,6 +145,11 @@ body.locked>*:not(#lock):not(script){display:none!important}
 .cat.sleep .lg,.cat.sleep .tail{animation:none}
 .zz{position:absolute;top:-6px;right:10px;font-size:1.6rem;animation:zzf 1.6s ease-in-out infinite}
 @keyframes zzf{50%{transform:translateY(-10px);opacity:.5}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.st{background:var(--bg2);border:1.5px solid var(--line);border-radius:26px;padding:18px 10px;text-align:center}
+.st .e{font-size:2rem;line-height:1.4}
+.st b{display:block;font-size:clamp(1.15rem,4.2vw,1.7rem);color:var(--sun);font-variant-numeric:tabular-nums;line-height:1.4;word-break:break-all}
+.st small{color:var(--mute);font-size:.9rem}
 #dim{position:fixed;inset:0;z-index:12;pointer-events:none;opacity:0;transition:opacity .9s;background:radial-gradient(circle at var(--fx,50%) var(--fy,50%),transparent 0,rgba(5,4,20,.3) 70px,rgba(5,4,20,.95) 340px)}
 #dim.on{opacity:1}
 .flame{transform-box:fill-box;transform-origin:50% 100%;filter:drop-shadow(0 0 8px #ffb347) drop-shadow(0 0 20px rgba(255,140,40,.7));animation:fl2 1s ease-in-out infinite}
@@ -210,19 +205,24 @@ body.locked>*:not(#lock):not(script){display:none!important}
   <div id="wish" aria-live="polite">اختاري حرف… 💜</div>
 </section>
 
-<section id="hands">
-  <h2>إيدين بتتكلم</h2>
-  <p class="lead">أنتِ بتخلي الصوت له معنى، والإشارة لها صوت. اضغطي على أي كارت وشوفي الإيدين وهي بتحتفل.</p>
-  <div class="signs" id="signs"></div>
+<section id="age">
+  <h2>لمياء بالأرقام ✨</h2>
+  <p class="lead">أرقام بتتحرك لايف، من أول يوم اتولدتي لحد اللحظة دي (تقريبية بس 😉).</p>
+  <div class="stats" id="stats"></div>
 </section>
 
 <section id="note">
   <div class="letter">
     <p>يا لمياء،</p>
     <p>النهارده بقيتي تلاتين سنة، وأنا فخور إني صاحبك. أنتِ من الناس القليلة اللي لما بتسمعني، بحس إن كلامي وصل، حتى لو مقلتش كل حاجة.</p>
+    <p>التلاتين مش رقم بيخوّف، دي بداية فصل جديد. فصل أنتِ فيه أنضج وأقوى وأهدى، وعارفة إنتِ عايزة إيه وبتحبي إيه، ومعاكي ناس بتحبك على اللي إنتِ عليه.</p>
     <p>بشوف شغلك بيغيّر في ناس كتير، وبشوف إنك بتعملي ده بحب وصبر، من غير ما تستني حد يقولك شكراً. وده بيخليني أحترمك أكتر كل سنة.</p>
-    <p>نفسي السنة الجاية تكون أهدى وأحلى عليكي، وإن كل أمنية بتتمناها تتحقق، وإن ضحكتك دايماً تبقى أعلى من أي تعب.</p>
-    <p class="sig">كل سنة وأنتِ طيبة يا لمياء 💜<br>صديقك، أحمد</p>
+    <p>الطفل اللي بتساعديه يقول أول كلمة مش بيتعلم الكلام بس، ده بيتعلم إن في حد سامعه ومصدقه ومصبّر عليه. وده أغلى حاجة ممكن حد يديها لحد.</p>
+    <p>وإنتِ كمان تستاهلي حد يسمعك بنفس الصبر ده، ويفهمك من غير ما تشرحي. فخدي بالك من نفسك زي ما بتاخدي بالك من الكل.</p>
+    <p>ومهما انشغلنا، افتكري إن ليكي صاحب في ضهرك. تكلميه وقت ما تحبي، بالكلام أو بالسكوت أو بإشارة.</p>
+    <p>نفسي السنة الجاية تكون أهدى وأحلى عليكي، وإن كل أمنية بتتمنّاها تتحقق، وإن ضحكتك دايماً تبقى أعلى من أي تعب.</p>
+    <p>وبالمناسبة… ماكانش عندي كلام يكفي، فعملتلك موقع كامل. 😂</p>
+    <p class="sig">كل سنة وأنتِ طيبة يا لمياء 💜<br>أحمد</p>
   </div>
 </section>
 <section id="future">
@@ -372,6 +372,17 @@ function opened(d){
 render();
 })();
 
+/* age counter */
+(function(){
+var BORN=new Date('1996-10-20T00:00:00+03:00').getTime(),box=document.getElementById('stats');if(!box)return;
+var C=[['📅','يوم عدّى عليكي',function(s){return s/86400}],['⏰','ساعة',function(s){return s/3600}],['⏱️','ثانية',function(s){return s}],
+  ['❤️','دقة قلب',function(s){return s/60*72}],['🌬️','نفس',function(s){return s/60*16}],['😴','ساعة نوم',function(s){return s/3600/3}],
+  ['😂','ضحكة بالتقدير',function(s){return s/86400*15}],['🌍','كيلومتر مع الأرض حوالين الشمس',function(s){return s*29.78}]],els=[];
+C.forEach(function(c){var d=document.createElement('div');d.className='st';d.innerHTML='<div class="e">'+c[0]+'</div><b>—</b><small>'+c[1]+'</small>';box.appendChild(d);els.push(d.querySelector('b'))});
+function tick(){var s=Math.max(0,(Date.now()-BORN)/1000);C.forEach(function(c,i){els[i].textContent=Math.floor(c[2](s)).toLocaleString('ar-EG')})}
+tick();setInterval(tick,200);
+})();
+
 /* wish mode */
 (function(){
 var svg=document.getElementById('cakeSvg'),msg=document.getElementById('cakeMsg'),dim=document.getElementById('dim'),song=document.getElementById('song'),
@@ -461,19 +472,6 @@ data.forEach(function(d,i){
   b.onclick=function(){box.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-pressed','false')});
     b.setAttribute('aria-pressed','true');wish.textContent=d[1];if(window.waveBoost)waveBoost()};
   box.appendChild(b)});
-})();
-
-/* signs */
-(function(){
-var s=[['🤟','بحبك','إشارة معروفة بتجمع حرف الألف واللام والياء في الإنجليزي، وبتقول «بحبك».'],['🙌','تصفيق الصم','الإيدين بتترفع وبتتهز في الهوا بدل التصفيق بالصوت.'],['🫶','شكراً ليكِ','تقدير على كل صبر وكل مجهود، من غير ما نحتاج صوت.']];
-var g=document.getElementById('signs');
-s.forEach(function(d){
-  var b=document.createElement('button');b.type='button';b.className='sign';b.setAttribute('aria-pressed','false');
-  b.innerHTML='<span class="em">'+d[0]+'</span><b>'+d[1]+'</b><span class="d">'+d[2]+'</span>';
-  b.onclick=function(){var on=b.getAttribute('aria-pressed')==='true';
-    g.querySelectorAll('.sign').forEach(function(o){o.setAttribute('aria-pressed','false')});
-    b.setAttribute('aria-pressed',on?'false':'true')};
-  g.appendChild(b)});
 })();
 
 /* cake */
